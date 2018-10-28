@@ -99,14 +99,20 @@ public class CatalogActivity extends AppCompatActivity {
                 PetEntry.COLUMN_PET_WEIGHT };
 
         // Perform a query on the pets table
-        Cursor cursor = db.query(
+       /* Cursor cursor = db.query(
                 PetEntry.TABLE_NAME,   // The table to query
                 projection,            // The columns to return
                 null,                  // The columns for the WHERE clause
                 null,                  // The values for the WHERE clause
                 null,                  // Don't group the rows
                 null,                  // Don't filter by row groups
-                null);                   // The sort order
+                null);                   // The sort order*/
+        Cursor cursor = getContentResolver().query(
+                PetEntry.CONTENT_URI,   // The content URI of the words table
+                projection,             // The columns to return for each row
+                null,                   // Selection criteria
+                null,                   // Selection criteria
+                null);                  // The sort order for the returned rows
 
         TextView displayView = (TextView) findViewById(R.id.text_view_pet);
 
