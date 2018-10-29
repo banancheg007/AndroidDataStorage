@@ -131,6 +131,7 @@ public class CatalogActivity extends AppCompatActivity {
         } finally {
             // Always close the cursor when you're done reading from it. This releases all its
             // resources and makes it invalid.
+            if(cursor!=null)
             cursor.close();
         }
     }
